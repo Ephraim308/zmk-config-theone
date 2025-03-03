@@ -40,6 +40,12 @@
         };
     };
 
+    combos:
+        combo_yu_colon:
+            timeout: 50  # Time in milliseconds to trigger the combo
+            key-positions: [17, 18]  # Positions of Y and U on the right half
+            bindings: <&kp COLON>  # Keycode for ":"
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
