@@ -89,53 +89,60 @@
 						key-positions = <7 8>;
 						bindings = <&kp BSPC>;
 				};
-                //combo for ( and >
-				combo_1 {
-						timeout-ms = <300>;
-						key-positions = <17 18>;
-						bindings = <&lt( LPAREN, LT )>;
-				};
-                //combo for ) and >
-				combo_2 {
-						timeout-ms = <300>;
-						key-positions = <18 19>;
-						bindings = <&lt( RPAREN, GT )>;
-				};
-                //combo for [ and }
-				combo_3 {
-						timeout-ms = <300>;
-						key-positions = <27 28>;
-						bindings = <&lt( LBRACKET, LCBR )>;
-				};
-                //combo for [ and {
-				combo_4 {
-						timeout-ms = <300>;
-						key-positions = <28 29>;
-						bindings = <&lt&lt( RBRACKET, RCBR ) >;
-				};
-                //combo for - _
-				combo_5 {
-						timeout-ms = <300>;
-						key-positions = <26 27>;
-						bindings = <&lt( MINUS, UNDERSCORE )>;
-				};
-                //combo for del
-				combo_6 {
-						timeout-ms = <300>;
-						key-positions = <8 9>;
-						bindings = <&kp DEL>;
-				};
-                //combo for copy
-				combo_7 {
-						timeout-ms = <300>;
-						key-positions = <18 19>;
-						bindings = <&mod LCTRL &kp C>;
-				};
-                //combo for paste
-				combo_8 {
-						timeout-ms = <300>;
-						key-positions = <22 23>;
-						bindings = <&mod LCTRL &kp V>;
+                // combo for ( and >
+                combo_1 {
+                    timeout-ms = <300>;
+                    key-positions = <17 18>;
+                    bindings = <&kp LPAREN>, <&kp GT>;
+                };
+
+                // combo for ) and >
+                combo_2 {
+                    timeout-ms = <300>;
+                    key-positions = <18 19>;
+                    bindings = <&kp RPAREN>, <&kp GT>;
+                };
+
+                // combo for [ and }
+                combo_3 {
+                    timeout-ms = <300>;
+                    key-positions = <27 28>;
+                    bindings = <&kp LBRACKET>, <&kp RCBR>;
+                };
+
+                // combo for [ and {
+                combo_4 {
+                    timeout-ms = <300>;
+                    key-positions = <28 29>;
+                    bindings = <&kp LBRACKET>, <&kp LCBR>;
+                };
+
+                // combo for - _
+                combo_5 {
+                    timeout-ms = <300>;
+                    key-positions = <26 27>;
+                    bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+                };
+
+                // combo for del
+                combo_6 {
+                    timeout-ms = <300>;
+                    key-positions = <8 9>;
+                    bindings = <&kp DEL>;
+                };
+
+                // combo for copy
+                combo_7 {
+                    timeout-ms = <300>;
+                    key-positions = <18 19>;
+                    bindings = <&mod LCTRL &kp C>;
+                };
+
+                // combo for paste
+                combo_8 {
+                    timeout-ms = <300>;
+                    key-positions = <22 23>;
+                    bindings = <&mod LCTRL &kp V>;
 				};
     };
 
@@ -146,8 +153,8 @@
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-		&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L &kp SEMI
-		&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp SLASH
+		&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &lt( SEMI, COLON )
+		&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &lt( SLASH, QUESTION )
              &mo EXT &mt LSHIFT SPACE           &kp SPACE &sl SYM
 		>;
 		};
