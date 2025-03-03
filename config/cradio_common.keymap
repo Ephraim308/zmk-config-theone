@@ -82,7 +82,7 @@
 						bindings = <&kp ESC>;
 				};
                 //combo for backspace
-				combo_esc {
+				combo_bspc {
 						timeout-ms = <300>;
 						key-positions = <7 8>;
 						bindings = <&kp BSPC>;
