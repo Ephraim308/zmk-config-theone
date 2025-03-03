@@ -3,7 +3,8 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 
 // Layer definitions - these should match your main keymap file
 #define DEF 0
