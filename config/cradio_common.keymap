@@ -93,14 +93,14 @@
                 combo_1 {
                     timeout-ms = <300>;
                     key-positions = <17 18>;
-                    bindings = <&kp LPAREN>, <&mod LSHIFT &kp LT>;
+                    bindings = <&kp LPAR>, <&mod LSHIFT &kp LT>;
                 };
 
                 // combo for ) and >
                 combo_2 {
                     timeout-ms = <300>;
                     key-positions = <18 19>;
-                    bindings = <&kp RPAREN>, <&kp GT>;
+                    bindings = <&kp RPAR>, <&kp GT>;
                 };
 
                 // combo for [ and }
