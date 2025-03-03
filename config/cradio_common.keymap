@@ -57,14 +57,6 @@
 
     combos {
         compatible = "zmk,combos";
-				// both right thumb keys
-/*
-        combo_accent {
-            timeout-ms = <300>;
-            key-positions = <32 33>;
-            bindings = <&mo ACCENT>;
-        };
-*/
 				// internal-left & external-right thumb keys
 				combo_sym2 {
 						timeout-ms = <200>;
@@ -153,10 +145,15 @@
         // Base alpha layer
        		default_layer {
 		bindings = <
-		&kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U  &kp I     &kp O   &kp P 
-		&kp A &kp S &kp D &kp F &kp G           &kp H &kp J  &kp K     &kp L   &kp SEMICOLON
-		&kp Z &kp X &kp C &kp V &kp B           &kp N &kp M  &kp COMMA &kp DOT &kp SLASH
-             &mo EXT &mt LSHIFT SPACE           &kp SPACE &sl SYM
+        //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+               &kp Q        &kp W          &kp E          &kp R        &kp T         &kp Y          &kp U          &kp I        &kp O        &kp P 
+        //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+               &kp A         &kp S        &kp D           &kp F        &kp G,          &kp H         &kp J          &kp K         &kp L    &kp SEMICOLON
+        //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+               &kp Z          &kp X       &kp C           &kp V        &kp B          &kp N          &kp M         &kp COMMA     &kp DOT    &kp SLASH
+        //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+                                                       &mo EXT   &mt LSHIFT SPACE    &kp SPACE      &sl SYM
+        //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 		>;
 		};
 
