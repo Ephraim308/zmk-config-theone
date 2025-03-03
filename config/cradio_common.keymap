@@ -58,13 +58,13 @@
     combos {
         compatible = "zmk,combos";
 				// both right thumb keys
-/*
+
         combo_accent {
             timeout-ms = <300>;
             key-positions = <32 33>;
             bindings = <&mo ACCENT>;
         };
-*/
+
 				// internal-left & external-right thumb keys
 				combo_sym2 {
 						timeout-ms = <200>;
@@ -89,6 +89,7 @@
 						key-positions = <7 8>;
 						bindings = <&kp BSPC>;
 				};
+
                 // combo for ( and <
                 combo_1 {
                     timeout-ms = <300>;
