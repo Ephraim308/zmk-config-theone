@@ -136,14 +136,14 @@
                 combo_7 {
                     timeout-ms = <300>;
                     key-positions = <18 19>;
-                    bindings = <&mod LCTRL &kp C>;
+                    bindings = <&kp LC(C)>;
                 };
 
                 // combo for paste
                 combo_8 {
                     timeout-ms = <300>;
                     key-positions = <22 23>;
-                    bindings = <&mod LCTRL &kp V>;
+                    bindings = <&kp LC(P)>;
 				};
     };
 
