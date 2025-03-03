@@ -18,27 +18,33 @@
 #define LEF 3
 #define TRI 4
 
-/ {
-    behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
-    };
+  combos:
+    combo_yu_colon:
+        timeout: 50  # Time in milliseconds to trigger the combo
+        key-positions: [17, 18]  # Positions of Y and U on the right half
+        bindings: <&kp COLON>  # Keycode for ":"
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <RIG LEF>;
-            then-layer = <TRI>;
+    / {
+        behaviors {
+            ht: hold_tap {
+                label = "hold_tap";
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                flavor = "tap-preferred";
+                tapping-term-ms = <220>;
+                quick-tap-ms = <150>;
+                global-quick-tap;
+                bindings = <&kp>, <&kp>;
+            };
         };
-    };
+
+        conditional_layers {
+            compatible = "zmk,conditional-layers";
+            tri_layer {
+                if-layers = <RIG LEF>;
+                then-layer = <TRI>;
+            };
+        };
 
     keymap {
         compatible = "zmk,keymap";
