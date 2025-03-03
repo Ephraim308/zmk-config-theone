@@ -58,13 +58,13 @@
     combos {
         compatible = "zmk,combos";
 				// both right thumb keys
-
+/*
         combo_accent {
             timeout-ms = <300>;
             key-positions = <32 33>;
             bindings = <&mo ACCENT>;
         };
-
+*/
 				// internal-left & external-right thumb keys
 				combo_sym2 {
 						timeout-ms = <200>;
@@ -81,7 +81,7 @@
 				combo_esc {
 						timeout-ms = <300>;
 						key-positions = <1 2>;
-						bindings = <&kp ESC>;
+						bindings = <&kp ESCAPE>;
 				};
                 //combo for backspace
 				combo_bspc {
@@ -89,12 +89,12 @@
 						key-positions = <7 8>;
 						bindings = <&kp BSPC>;
 				};
-
+                
                 // combo for ( and <
                 combo_1 {
                     timeout-ms = <300>;
                     key-positions = <17 18>;
-                    bindings = <&kp LPAR>, <&mod LSHIFT &kp LT>;
+                    bindings = <&sk LS(LESS_THAN) LEFT_PARENTHESIS>;
                 };
 
                 // combo for ) and >
