@@ -89,11 +89,11 @@
 						key-positions = <7 8>;
 						bindings = <&kp BSPC>;
 				};
-                // combo for ( and >
+                // combo for ( and <
                 combo_1 {
                     timeout-ms = <300>;
                     key-positions = <17 18>;
-                    bindings = <&kp LPAREN>, <&kp GT>;
+                    bindings = <&kp LPAREN>, <&mod LSHIFT &kp LT>;
                 };
 
                 // combo for ) and >
