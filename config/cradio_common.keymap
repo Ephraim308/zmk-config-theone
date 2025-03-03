@@ -58,11 +58,13 @@
     combos {
         compatible = "zmk,combos";
 				// both right thumb keys
+/*
         combo_accent {
             timeout-ms = <300>;
             key-positions = <32 33>;
             bindings = <&mo ACCENT>;
         };
+*/
 				// internal-left & external-right thumb keys
 				combo_sym2 {
 						timeout-ms = <200>;
@@ -86,6 +88,54 @@
 						timeout-ms = <300>;
 						key-positions = <7 8>;
 						bindings = <&kp BSPC>;
+				};
+                //combo for ( and >
+				combo_1 {
+						timeout-ms = <300>;
+						key-positions = <17 18>;
+						bindings = <&lt( LPAREN, LT )>;
+				};
+                //combo for ) and >
+				combo_2 {
+						timeout-ms = <300>;
+						key-positions = <18 19>;
+						bindings = <&lt( RPAREN, GT )>;
+				};
+                //combo for [ and }
+				combo_3 {
+						timeout-ms = <300>;
+						key-positions = <27 28>;
+						bindings = <&lt( LBRACKET, LCBR )>;
+				};
+                //combo for [ and {
+				combo_4 {
+						timeout-ms = <300>;
+						key-positions = <28 29>;
+						bindings = <&lt&lt( RBRACKET, RCBR ) >;
+				};
+                //combo for - _
+				combo_5 {
+						timeout-ms = <300>;
+						key-positions = <26 27>;
+						bindings = <&lt( MINUS, UNDERSCORE )>;
+				};
+                //combo for del
+				combo_6 {
+						timeout-ms = <300>;
+						key-positions = <8 9>;
+						bindings = <&kp DEL>;
+				};
+                //combo for copy
+				combo_7 {
+						timeout-ms = <300>;
+						key-positions = <18 19>;
+						bindings = <&mod LCTRL &kp C>;
+				};
+                //combo for paste
+				combo_8 {
+						timeout-ms = <300>;
+						key-positions = <22 23>;
+						bindings = <&mod LCTRL &kp V>;
 				};
     };
 
@@ -141,7 +191,7 @@
           				           												&none &none        	&none &none 
 		>;
 		};
-
+/*
         // Used to type regional accents.
        		accent_layer {
 		bindings = <
@@ -151,6 +201,7 @@
           				     &none &none                         &none &none 
 		>;
 		};
+*/
 
         // Used to change the keyboard's settings.
        		settings_layer {
