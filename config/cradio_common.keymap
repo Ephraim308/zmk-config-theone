@@ -103,25 +103,25 @@
                     bindings = <&kp RPAR>, <&kp GT>;
                 };
 
-                // combo for [ and }
+                // combo for [ and {
                 combo_3 {
                     timeout-ms = <300>;
                     key-positions = <27 28>;
-                    bindings = <&kp LBRACKET>, <&kp RCBR>;
+                    bindings = <&kp LBKT>;
                 };
 
-                // combo for [ and {
+                // combo for ] and }
                 combo_4 {
                     timeout-ms = <300>;
                     key-positions = <28 29>;
-                    bindings = <&kp LBRACKET>, <&kp LCBR>;
+                    bindings = <&kp RBKT>;
                 };
 
                 // combo for - _
                 combo_5 {
                     timeout-ms = <300>;
                     key-positions = <26 27>;
-                    bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+                    bindings = <&kp MINUS>;
                 };
 
                 // combo for del
