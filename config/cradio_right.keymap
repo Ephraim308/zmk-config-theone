@@ -58,4 +58,4 @@
     ;
 };
 
-#include "cradio_common.keymap"
+#include "cradio.keymap"
