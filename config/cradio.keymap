@@ -1,5 +1,3 @@
 #define CONFIG_WIRELESS
 
 #include "zmk-helpers/key-labels/34.h"
-#include "cradio_right.keymap"
-#include "cradio_left.keymap"

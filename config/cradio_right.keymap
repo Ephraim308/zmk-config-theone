@@ -304,6 +304,4 @@ ZMK_BASE_LAYER(Mouse,
 /* vim: set ft=c tw=146: */
 
 
-/*#include "cradio.keymap"*/
-#include "cradio_right.keymap"
 #include "cradio_left.keymap"
