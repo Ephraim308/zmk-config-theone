@@ -142,7 +142,7 @@
                     bindings = <&kp LC(P)>;
 				};
                 // combo for tab
-                combo_8 {
+                combo_9 {
                     timeout-ms = <300>;
                     key-positions = <12 13>;
                     bindings = <&kp TAB>;
