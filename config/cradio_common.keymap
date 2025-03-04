@@ -9,6 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keymap_italian.h"
 
+// Home row mods macro
+#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+
 // Layer definitions
     #define BASE 0
     #define SYM 1
@@ -137,6 +141,12 @@
                     key-positions = <22 23>;
                     bindings = <&kp LC(P)>;
 				};
+                // combo for tab
+                combo_8 {
+                    timeout-ms = <300>;
+                    key-positions = <12 13>;
+                    bindings = <&kp TAB>;
+				};
     };
 
     keymap {
@@ -148,22 +158,22 @@
         //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
                &kp Q        &kp W          &kp E          &kp R        &kp T         &kp Y          &kp U          &kp I        &kp O        &kp P 
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-               &kp A         &kp S        &kp D           &kp F        &kp G          &kp H         &kp J          &kp K         &kp L    &kp SEMICOLON
+             HRML(A,          S,             D,             F)         &kp G         &kp H          HRMR(J,          K,            L,          SEMI)
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                &kp Z          &kp X       &kp C           &kp V        &kp B          &kp N          &kp M         &kp COMMA     &kp DOT    &kp SLASH
         //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                                       &mo EXT   &mt LSHIFT SPACE    &kp SPACE      &sl SYM
+                                                         &mo SYM   &mt EXT  ENTER  &mt FNC SPACE   &kp LSHFT
         //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 		>;
 		};
 
-        // Numbers and high frequency symbols
+        // Numbers and high frequency symbols SYM   
        		sym_layer {
 		bindings = <
         //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-               &kp N1         &kp N2      &kp N3        &kp N4        &kp N5           &kp N6       &kp N7        &kp N8        &kp N9        &kp N0 
+               &kp N1         &kp N2      &kp N3        &kp N4        &kp N5       &kp IT_LESS   &kp IT_USD    &kp IT_LPAR   &kp IT_LBRC   &kp IT_LBKT     
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            &kp IT_LESS   &kp IT_USD    &kp IT_LPAR   &kp IT_LBRC   &kp IT_LBKT     &kp IT_EQL    &kp IT_QUES   &kp IT_SQUOT &kp IT_MINUS    &kp IT_AST
+               &kp N6         &kp N7      &kp N8        &kp N9        &kp N0        &kp IT_EQL    &kp IT_QUES   &kp IT_SQUOT &kp IT_MINUS    &kp IT_AST
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
             &kp IT_GREAT  &kp IT_PERC   &kp IT_RPAR    &kp IT_RBRC   &kp IT_RBKT     &kp IT_AT    &kp IT_EXCL  &kp IT_DQUOT   &kp IT_PLUS   &kp IT_FSLH
         //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
@@ -172,33 +182,33 @@
 		>;
 		};
 
-        // Main modifiers and arrow keys
+        // Main modifiers and arrow keys EXT
 		    ext_layer {
 		bindings = <
         //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-               &kp ESC       &trans       &trans        &trans        &trans         &kp PG_UP     &kp HOME       &kp DEL       &kp END       &kp CAPS 
+               &kp ESC       &trans       &trans        &trans        &trans         &kp PG_UP     &kp BSPC       &kp DEL       &kp DEL       &kp CAPS 
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-              &sk LALT      &sk LGUI      &sk LSHIFT   &sk LCTRL     &kp RALT        &kp PG_DN      &kp LEFT      &kp DOWN       &kp UP      &kp RIGHT
+               &none         &none        &none         &none         &none          &kp PG_DN     &kp LEFT       &kp DOWN      &kp UP      &kp RIGHT
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            &kp IT_GREAT  &kp IT_PERC   &kp IT_RPAR    &kp IT_RBRC   &kp IT_RBKT     &kp IT_AT    &kp IT_EXCL  &kp IT_DQUOT   &kp IT_PLUS   &kp IT_FSLH
+            &kp IT_GREAT  &kp IT_PERC   &kp IT_RPAR    &kp IT_RBRC   &kp IT_RBKT      &kp INS       &kp TAB        &none         &none         &none     
         //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                                         &trans       &kp LCTRL       &kp ENTER      &mo FNC 
         //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 		>;
 		};
 
-        // Function keys with modifiers
+        // Function keys with modifiers FNC
        		fnc_layer {
 		bindings = <
-        //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-               &kp F1       &kp F2         &kp F3        &kp F4        &kp F5          &kp F6       &kp F7        &kp F8        &kp F9        &kp F10  
-        //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-              &sk LALT      &sk LGUI      &sk LSHIFT    &sk LCTRL     &kp RALT        &kp F11       &kp F12   &kp PRINTSCREEN    &trans       &trans
-        //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-              &none         &none         &none          &none         &none	       &none         &none         &none          &none        &none
-        //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                                        &none          &none          &none          &none  
-        //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
+        //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭───────────────────┬───────────────────┬───────────────────┬───────────────────┬───────────────────╮
+               &kp F1       &kp F2         &kp F3        &kp F4        &kp F5       &kp C_VOLUME_DOWN     &kp C_VOLUME_UP    &kp C_PLAY_PAUSE       &kp C_NEXT       &kp C_FAST_FORWARD    
+        //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────────────┼───────────────────┼───────────────────┼───────────────────┼───────────────────┤
+              &&kp F6       &kp F7        &kp F8        &kp F9        &kp F10            &kp F11             &kp F12          &kp PRINTSCREEN          &trans              &trans
+        //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├───────────────────┼───────────────────┼───────────────────┼───────────────────┼───────────────────┤
+              &none         &none         &none          &none         &none	           &none               &none               &none                 &none              &none
+        //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├───────────────────┼───────────────────┼───────────────────┴───────────────────────────────────────╯
+                                                        &none          &none              &none                &none  
+        //                                          ╰─────────────┴─────────────╯ ╰───────────────────┴───────────────────╯
 		>;
 		};
 
