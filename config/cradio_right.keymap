@@ -98,6 +98,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
     ;
 };
 
+// In your keymap, but not bound to a key
+&bt_clear
 
 
 
