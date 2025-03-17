@@ -201,11 +201,11 @@ SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
 // Tap: ( | Shift + tap: { | Ctrl + shift + tap: [.
 SIMPLE_MORPH(paren_morph, SFT, &kp LPAR, &paren_inner_morph)
-SIMPLE_MORPH(paren_inner_morph, CTL, &kp LBRACE, &kp LBKT)
+SIMPLE_MORPH(paren_inner_morph, CTL, &kp LBRC, &kp LBKT)
 
 // Tap: ) | Shift + tap: } | Ctrl + shift + tap: ].
 SIMPLE_MORPH(rparen_morph, SFT, &kp RPAR, &rparen_inner_morph)
-SIMPLE_MORPH(rparen_inner_morph, CTL, &kp RBRACE, &kp RBKT)
+SIMPLE_MORPH(rparen_inner_morph, CTL, &kp RBRC, &kp RBKT)
 
 
 
