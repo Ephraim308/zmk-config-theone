@@ -109,7 +109,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
     , <&pro_micro  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
     , <&gpio1      1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
     , <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    ;
 };
 
 
@@ -171,6 +170,7 @@ ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
               tapping-term-ms = <200>;)
 
+              // mouse options
 // Smart-mouse, requires tri-state module.
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
@@ -196,6 +196,17 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 // Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
 SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+             
+
+// Tap: ( | Shift + tap: { | Ctrl + shift + tap: [.
+SIMPLE_MORPH(paren_morph, SFT, &kp LPAR, &paren_inner_morph)
+SIMPLE_MORPH(paren_inner_morph, CTL, &kp LBRACE, &kp LBKT)
+
+// Tap: ) | Shift + tap: } | Ctrl + shift + tap: ].
+SIMPLE_MORPH(rparen_morph, SFT, &kp RPAR, &rparen_inner_morph)
+SIMPLE_MORPH(rparen_inner_morph, CTL, &kp RBRACE, &kp RBKT)
+
+
 
 // Tap: qmark | Shift + tap: excl.
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
@@ -231,6 +242,8 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define DSK_MGR   &kp LC(UP)              // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
+
+
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
@@ -248,19 +261,19 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &comma_morph  &dot_morph    &qexcl      ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                               &lt FN ESC  &lt NUM RET  ,   &lt_spc NAV 0 &kp BACKSPACE
+                                               &kp(SHIFT)     &mo(1)    ,      &spc         &enter    ,
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
 ZMK_BASE_LAYER(Nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    ___           ___           &kp LG(TAB)   &swapper      ___         ,   &kp PG_UP     NAV_BSPC       &kp RET       &kp DEL       ___        ,
+      &kp N1        &kp N2        &kp N3         &kp N4      &kp N5     ,      &kp N6       &kp N7        &kp N8        &kp N9        &kp N0    , 
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL   &kp SEMICOLON ,   &kp PG_DN     &kp LEFT      &kp DOWN      &kp UP          &kp RIGHT,
+     &kp LA(N1)     &kp LA(N2)   &kp LA(N3)    &kp LA(N4)   &kp LA(N9)  ,   &kp PG_DN     &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT  ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           ___           ___           ___           ___         ,   &kp INS       &kp TAB       ___           ___           ___         ,
+     &kp SLASH        ___           ___        &kp DLLR      &kp EQUAL  ,  &kp BACKSPACE     &tab       &paren_morph &rparen_morph     ___      , 
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                              ___           ___         ,   ___           CANCEL
+                                               &kp(SHIFT)     &mo(1)    ,      &spc         &enter    ,
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
@@ -300,7 +313,6 @@ ZMK_BASE_LAYER(Sys,
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
-
 ZMK_BASE_LAYER(Mouse,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     ___           ___           ___           ___           ___         ,   ___           &kp PG_UP     U_MS_U         &kp PG_DN    ___         ,
@@ -315,3 +327,4 @@ ZMK_BASE_LAYER(Mouse,
 
 /* vim: set ft=c tw=146: */
 
+    ;
