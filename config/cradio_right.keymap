@@ -113,8 +113,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 };
 
 
-
-
 /* Nav cluster */
 
 // Trigger tap-action on all interrupts.
