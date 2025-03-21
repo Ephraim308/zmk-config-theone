@@ -257,23 +257,6 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 #endif
 
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_sys_layer {
-            timeout-ms = <COMBO_TERM_FAST>;
-            key-positions = <LH0 RH0>;
-            bindings = <&sl SYS>;
-            layers = <DEF NAV NUM>;
-            slow-release;
-            require-prior-idle-ms = <COMBO_IDLE_FAST>;
-        };
-    };
-};
-
-
-
-
 ZMK_BASE_LAYER(Base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp Q         &kp W         &kp E         &kp R         &kp T       ,   &kp Y         &kp U         &kp I         &kp O         &kp P       ,
