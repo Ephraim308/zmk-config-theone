@@ -274,7 +274,7 @@ ZMK_BASE_LAYER(Nav,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 &hml LGUI LA(N1) &hml LALT LA(N2) &hml LSHFT LA(N3) &hml LCTRL LA(N4) &kp LA(N9), &kp ESC   &kp LEFT      &kp  DOWN     &kp UP        &kp RIGHT ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &mo(4)    &kp LBKT       &kp RBKT      &kp DLLR      &kp EQUAL  ,  &kp BACKSPACE     &kp TAB   &paren_morph   &rparen_morph   &kp GRAVE ,
+     &tg(4)    &kp LBKT       &kp RBKT      &kp DLLR      &kp EQUAL  ,  &kp BACKSPACE     &kp TAB   &paren_morph   &rparen_morph   &kp GRAVE ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                                &kp RET        &mo 1     ,    &kp SPACE       &kp LSHIFT 
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
