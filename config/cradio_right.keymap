@@ -140,7 +140,6 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 MASK_MODS(masked_home, (MOD_LCTL), &kp HOME)
 MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 
-/* Magic-shift & auto-layers */
 
 // Tap: repeat after alpha, else sticky-shift |
 // Shift + tap/ double-tap: caps-word | Hold: shift.
@@ -249,7 +248,7 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 /* Keymap */
 
-ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
+// ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
