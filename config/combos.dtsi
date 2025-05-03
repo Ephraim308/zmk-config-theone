@@ -8,7 +8,7 @@
           ╰─────────────╯ ╰─────────────╯ */
 
 #define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 49 
+#define COMBO_TERM_SLOW 40 
 
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
