@@ -226,6 +226,12 @@ SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
 ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
           tap-ms = <5>;)
 
+
+
+
+
+
+
 // Tap: backspace | Lshft + tap: delete | Rshft + tap: shift-delete.
 ZMK_MOD_MORPH(bs_del, bindings = <&kp BSPC>, <&kp DEL>;
               mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <MOD_RSFT>;)
@@ -265,6 +271,7 @@ ZMK_BASE_LAYER(Base,
     &kp Q         &kp W         &kp E         &kp R         &kp T       ,   &kp Y         &kp U         &kp I         &kp O         &kp P       ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G       ,   &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L  &hmr LGUI SQT,
+
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &comma_morph  &dot_morph    &qexcl      ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
