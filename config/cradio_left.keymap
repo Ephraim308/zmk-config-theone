@@ -14,7 +14,7 @@
   #define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
 #endif
 
-/*inclue other keymap files (reference)*/
+/*include other keymap files (reference)*/
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/34.h"
 #include "zmk-helpers/unicode-chars/greek.dtsi"
@@ -34,7 +34,7 @@
 /* Global defaults */
 
 /*quick tap = this*/
-#define QUICK_TAP_MS 175
+#define QUICK_TAP_MS 200 
 
 /*release keypress after this amount of time*/
 &sk {
@@ -49,7 +49,7 @@
 /*no clue what this does*/
 &lt {
   flavor = "balanced";
-  tapping-term-ms = <130>;
+  tapping-term-ms = <150>;
   quick-tap-ms = <QUICK_TAP_MS>;
 };
 
@@ -66,7 +66,7 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
                tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <50>; hold-trigger-on-release;         \
+               require-prior-idle-ms = <10>; hold-trigger-on-release;         \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 /*home row mods for left and right hands*/
